@@ -119,3 +119,16 @@ def format_report_line(movie):
     return f' "{title}" ({year}) - {rating}/10, {duration}, жанры: {genres}'
 
 print (format_report_line(movies[2]))
+
+def titles_sorted_by_rating(movies):
+    movie_sorted = sorted(movies, key=lambda movie: movie["rating"], reverse=True)
+    return [movie["title"] for movie in movie_sorted]
+print (titles_sorted_by_rating(movies))
+
+def top_n_by_rating(movies, n=3):
+    movie_sorted = sorted(movies, key=lambda movie: movie["rating"], reverse=True)
+    return [(movie["title"], movie["rating"]) for movie in movie_sorted[:n]]
+result = top_n_by_rating(movies)
+
+print(result)
+print(type(result[0]))
