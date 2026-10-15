@@ -200,7 +200,7 @@ def build_report(movies):
     print(f"Средний возраст: {avg_year[2]} лет")
     print()
     print("Топ-3 фильма:")
-    for title, rating in top_n_by_rating(movies, 3):
+    for title, rating in top_3:
         movie = next(m for m in movies if m["title"] == title)
         print(format_report_line(movie))
     print()
